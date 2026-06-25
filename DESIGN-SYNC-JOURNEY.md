@@ -26,6 +26,32 @@ Four acts:
 
 ---
 
+## The prompts that drove it
+
+The entire journey came from **three short prompts** to Claude Code (Act 3 happened
+inside Claude Design itself, between prompts 2 and 3):
+
+**① Act 1 — build the design system**
+> *"can you create a mock industrial strength Design System here based on nike.com.
+> then i can apply `/design-sync` to it."*
+
+**② Act 2 — sync it to Claude Design**
+> *"`/design-sync` — import the design system in `./nike-design-system` into a new
+> Claude Design project"*
+
+**③ Act 4 — export the deck back to code**
+> *"Use the claude_design MCP (https://api.anthropic.com/v1/design/mcp, auth via
+> `/design-login`) to import this project:
+> `https://claude.ai/design/p/dfb3e8c4-801c-4c98-9365-ad295b3577e3?file=World+Cup+2026+Deck.dc.html`*
+>
+> *Implement: World Cup 2026 Deck.dc.html"*
+
+Notice prompt ③ named a `claude_design` MCP server that wasn't actually connected to
+the session — but the already‑authenticated `DesignSync` tool reads the same
+projects, so the import worked anyway (see Act 4).
+
+---
+
 ## Cast of characters (so the rest makes sense)
 
 | Thing | What it is |
@@ -39,6 +65,9 @@ Four acts:
 ---
 
 # Act 1 — Building the Nike Design System (as code)
+
+> **Prompt ①:** *"can you create a mock industrial strength Design System here based
+> on nike.com. then i can apply `/design-sync` to it."*
 
 **Goal:** a real, buildable component library — because `/design-sync` can only ship
 something that already exists as code. Its core principle is literally *"ship what
@@ -94,6 +123,9 @@ tokens + styles), 30 `.d.ts` files. **This repo is the input to Act 2.**
 ---
 
 # Act 2 — `/design-sync` to claude.ai
+
+> **Prompt ②:** *"`/design-sync` — import the design system in `./nike-design-system`
+> into a new Claude Design project"*
 
 This is the heart of it. `/design-sync` ran the repo through a deterministic
 **converter** and uploaded the result. Here's what actually happened, in order.
@@ -241,6 +273,10 @@ myself.)*
 ---
 
 # Act 4 — Export back to Claude Code
+
+> **Prompt ③:** *"Use the claude_design MCP (…auth via `/design-login`) to import this
+> project: `…/p/dfb3e8c4-…?file=World+Cup+2026+Deck.dc.html` — Implement: World Cup
+> 2026 Deck.dc.html"*
 
 The ask: **import the project and implement the deck** as something runnable.
 
