@@ -1,5 +1,7 @@
 # Claude Design Sync — Nike DS → World Cup 2026 Deck
 
+![The round trip: CODE → /design-sync → Claude Design → World Cup 2026 deck → export back to code](round-trip.png)
+
 A full **round-trip** through Claude's design tooling: build a design system **as
 code**, push it into **Claude Design** with `/design-sync`, use it to design a
 5‑slide campaign deck in the browser, then **export that deck back to code** as a
