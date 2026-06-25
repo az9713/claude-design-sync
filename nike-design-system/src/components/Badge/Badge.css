@@ -1,0 +1,29 @@
+.swoosh-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px var(--swoosh-space-2);
+  border-radius: var(--swoosh-radius-pill);
+  font-family: var(--swoosh-font-sans);
+  font-size: var(--swoosh-font-size-xs);
+  font-weight: var(--swoosh-font-weight-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: var(--swoosh-line-tight);
+}
+
+.swoosh-badge--new {
+  background: var(--swoosh-color-volt);
+  color: var(--swoosh-color-volt-ink);
+}
+
+.swoosh-badge--sale {
+  background: var(--swoosh-color-sale);
+  color: var(--swoosh-color-white);
+}
+
+.swoosh-badge--neutral {
+  background: var(--swoosh-color-gray-100);
+  color: var(--swoosh-color-gray-700);
+}

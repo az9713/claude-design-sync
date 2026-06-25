@@ -1,0 +1,117 @@
+.swoosh-hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--swoosh-color-black);
+  padding: var(--swoosh-space-10) var(--swoosh-space-6);
+  overflow: hidden;
+  font-family: var(--swoosh-font-sans);
+}
+
+/* Subtle volt accent stripe in the background */
+.swoosh-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(205, 250, 0, 0.07) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.swoosh-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--swoosh-space-4);
+}
+
+/* Alignment */
+.swoosh-hero--left {
+  justify-content: flex-start;
+}
+
+.swoosh-hero--center {
+  justify-content: center;
+}
+
+.swoosh-hero--center .swoosh-hero__content {
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+}
+
+.swoosh-hero__title {
+  margin: 0;
+  font-size: var(--swoosh-font-size-display);
+  font-weight: var(--swoosh-font-weight-bold);
+  line-height: var(--swoosh-line-tight);
+  letter-spacing: var(--swoosh-letter-tight);
+  color: var(--swoosh-color-white);
+  text-transform: uppercase;
+}
+
+.swoosh-hero__subtitle {
+  margin: 0;
+  font-size: var(--swoosh-font-size-lg);
+  font-weight: var(--swoosh-font-weight-regular);
+  line-height: var(--swoosh-line-normal);
+  color: var(--swoosh-color-gray-300);
+  max-width: 520px;
+}
+
+.swoosh-hero--center .swoosh-hero__subtitle {
+  max-width: 100%;
+}
+
+.swoosh-hero__cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--swoosh-space-3) var(--swoosh-space-6);
+  background: var(--swoosh-color-volt);
+  color: var(--swoosh-color-volt-ink);
+  border: none;
+  border-radius: var(--swoosh-radius-pill);
+  font-family: var(--swoosh-font-sans);
+  font-size: var(--swoosh-font-size-md);
+  font-weight: var(--swoosh-font-weight-bold);
+  letter-spacing: var(--swoosh-letter-tight);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: filter var(--swoosh-transition), transform var(--swoosh-transition);
+}
+
+.swoosh-hero--center .swoosh-hero__cta {
+  align-self: center;
+}
+
+.swoosh-hero__cta:hover {
+  filter: brightness(0.94);
+}
+
+.swoosh-hero__cta:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 640px) {
+  .swoosh-hero {
+    min-height: 320px;
+    padding: var(--swoosh-space-8) var(--swoosh-space-4);
+  }
+
+  .swoosh-hero__title {
+    font-size: var(--swoosh-font-size-2xl);
+  }
+
+  .swoosh-hero__subtitle {
+    font-size: var(--swoosh-font-size-md);
+  }
+}

@@ -1,0 +1,10 @@
+# Whitelist: ignore everything at the repo root, then re-include only the
+# project artifacts. This keeps unrelated files in this working folder
+# (transcripts, slides, images, scratch) out of the published repo.
+/*
+!/.gitignore
+!/README.md
+!/DESIGN-SYNC-JOURNEY.md
+!/index.html
+!/nike-design-system/
+!/world-cup-2026-deck/

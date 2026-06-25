@@ -1,0 +1,18 @@
+.swoosh-card {
+  background: var(--swoosh-color-surface);
+  border-radius: var(--swoosh-radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--swoosh-transition);
+}
+
+.swoosh-card--padded {
+  padding: var(--swoosh-space-5);
+}
+
+.swoosh-card--elevated {
+  box-shadow: var(--swoosh-shadow-md);
+}
+
+.swoosh-card--elevated:hover {
+  box-shadow: var(--swoosh-shadow-md), 0 8px 32px rgba(0, 0, 0, 0.1);
+}

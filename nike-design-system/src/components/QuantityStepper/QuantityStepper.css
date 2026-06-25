@@ -1,0 +1,47 @@
+.swoosh-qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--swoosh-space-3);
+  font-family: var(--swoosh-font-sans);
+}
+
+.swoosh-qty-stepper__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--swoosh-color-gray-200);
+  border-radius: var(--swoosh-radius-pill);
+  background: var(--swoosh-color-white);
+  color: var(--swoosh-color-text);
+  font-size: var(--swoosh-font-size-lg);
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color var(--swoosh-transition), background-color var(--swoosh-transition),
+    transform var(--swoosh-transition);
+  padding: 0;
+}
+
+.swoosh-qty-stepper__btn:hover:not(:disabled) {
+  border-color: var(--swoosh-color-black);
+  background: var(--swoosh-color-gray-50);
+}
+
+.swoosh-qty-stepper__btn:active:not(:disabled) {
+  transform: scale(0.93);
+}
+
+.swoosh-qty-stepper__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.swoosh-qty-stepper__value {
+  min-width: 2ch;
+  text-align: center;
+  font-size: var(--swoosh-font-size-md);
+  font-weight: var(--swoosh-font-weight-bold);
+  color: var(--swoosh-color-text);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,71 @@
+.swoosh-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--swoosh-radius-pill);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color var(--swoosh-transition), color var(--swoosh-transition),
+    border-color var(--swoosh-transition), transform var(--swoosh-transition);
+  /* Remove default button padding — size is set by width/height */
+  padding: 0;
+}
+
+.swoosh-icon-btn:active {
+  transform: scale(0.93);
+}
+
+.swoosh-icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* sizes */
+.swoosh-icon-btn--sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--swoosh-font-size-sm);
+}
+
+.swoosh-icon-btn--md {
+  width: 44px;
+  height: 44px;
+  font-size: var(--swoosh-font-size-md);
+}
+
+.swoosh-icon-btn--lg {
+  width: 56px;
+  height: 56px;
+  font-size: var(--swoosh-font-size-lg);
+}
+
+/* variants */
+.swoosh-icon-btn--solid {
+  background: var(--swoosh-color-black);
+  color: var(--swoosh-color-white);
+}
+
+.swoosh-icon-btn--solid:hover:not(:disabled) {
+  background: var(--swoosh-color-gray-700);
+}
+
+.swoosh-icon-btn--outline {
+  background: transparent;
+  color: var(--swoosh-color-black);
+  border-color: var(--swoosh-color-gray-200);
+}
+
+.swoosh-icon-btn--outline:hover:not(:disabled) {
+  border-color: var(--swoosh-color-black);
+}
+
+.swoosh-icon-btn--ghost {
+  background: transparent;
+  color: var(--swoosh-color-black);
+}
+
+.swoosh-icon-btn--ghost:hover:not(:disabled) {
+  background: var(--swoosh-color-gray-50);
+}

@@ -1,0 +1,13 @@
+{
+  "projectId": "4d1dcc0f-1ee2-40f7-be34-fbc15d4d2daa",
+  "shape": "package",
+  "pkg": "@swoosh/ui",
+  "buildCmd": "npm run build",
+  "cssEntry": "./dist/index.css",
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "Hero": { "cardMode": "column" },
+    "NavBar": { "cardMode": "column" },
+    "Tabs": { "cardMode": "column" }
+  }
+}

@@ -1,0 +1,58 @@
+.swoosh-tabs {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 2px solid var(--swoosh-color-border);
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.swoosh-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.swoosh-tabs__tab {
+  position: relative;
+  background: none;
+  border: none;
+  padding: var(--swoosh-space-3) var(--swoosh-space-5);
+  font-family: var(--swoosh-font-sans);
+  font-size: var(--swoosh-font-size-md);
+  font-weight: var(--swoosh-font-weight-medium);
+  color: var(--swoosh-color-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--swoosh-transition);
+  /* Underline indicator lives on pseudo-element so it doesn't affect layout */
+  margin-bottom: -2px;
+}
+
+.swoosh-tabs__tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--swoosh-space-5);
+  right: var(--swoosh-space-5);
+  height: 2px;
+  background: transparent;
+  transition: background-color var(--swoosh-transition);
+}
+
+.swoosh-tabs__tab:hover {
+  color: var(--swoosh-color-text);
+}
+
+.swoosh-tabs__tab--active {
+  color: var(--swoosh-color-black);
+  font-weight: var(--swoosh-font-weight-bold);
+}
+
+.swoosh-tabs__tab--active::after {
+  background: var(--swoosh-color-black);
+}
+
+.swoosh-tabs__tab:focus-visible {
+  outline: 2px solid var(--swoosh-color-volt);
+  outline-offset: -2px;
+  border-radius: var(--swoosh-radius-sm);
+}
